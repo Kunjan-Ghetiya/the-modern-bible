@@ -4,6 +4,13 @@
  * Description: Core functions for your custom WordPress theme.
  */
 
+
+include('inc/custom-posts.php');
+include('inc/shortcodes.php');
+
+add_theme_support('post-thumbnails');
+
+
 // Enqueue Assets
 function modern_bible_enqueue_assets() {
     // Enqueue Styles
@@ -28,8 +35,9 @@ add_filter('upload_mimes', 'allow_svg_upload');
 function modern_bible_register_menus() {
     register_nav_menus(array(
         'primary_menu' => __('Primary Menu', 'modern-bible'),
+        'footer_menu'  => __('Footer Menu', 'modern-bible'),
+        'quick_links_menu'  => __('Quick Links Menu', 'modern-bible'),
     ));
 }
 add_action('after_setup_theme', 'modern_bible_register_menus');
-
 ?>

@@ -106,7 +106,9 @@ body {
 p {
     margin-bottom: 30px;
 }
-
+.mb-0{
+    margin-bottom: 0;
+}
 /* ---------------------------------------------
    Headings (Typography)
 --------------------------------------------- */
@@ -242,9 +244,8 @@ h6 {
 .header-right-wrap {
     gap: 0 99px;
 }
-
-.header-menu {
-    gap: 0 40px;
+.nav-wrap ul {
+	gap: 0 40px;
 }
 
 .nav-wrap a {
@@ -279,3 +280,42 @@ h6 {
 .header-btn-groups {
     gap: 20px;
 }
+
+/* Footer Css start */
+.footer-bottom-wrap {
+	padding-top: 24px;
+	margin-top: 30px;
+	border-top: 2px solid transparent;
+	border-image-source: radial-gradient(
+		50% 64979997.6% at 50% 50.7%, 
+		#FC4D34 0%, 
+		rgba(237, 57, 84, 0.05) 100%
+	);
+	border-image-slice: 1;
+}
+
+.footer-logo img {
+	max-width: 248px;
+}
+.social-icons {
+	gap: 16px;
+}
+.social-link img {
+	transform: scale(1);
+    transition: all 0.5s;
+}
+.social-link:hover img {
+	transform: scale(1.1);
+}
+.quick-links-wrap a {
+	font-size: 14px;
+	color: var(--color-dark-gray);
+	text-decoration: underline;
+}
+.quick-link-menu {
+	gap: 20px;
+}
+.quick-links-wrap a:hover {
+	color: var(--color-gradient-start);
+}
+
