@@ -45,42 +45,70 @@ $sign_up_button  = get_field('sign_up_button', $theme_settings_id);
 
                 <div class="header-right-column header-column">
                     <div class="header-right-wrap d-flex justify-content-between align-items-center">
-                        <div class="navigation-wrap" role="navigation" aria-label="Main Menu">
-                     <?php
-                        if (has_nav_menu('primary_menu')) {
-                            wp_nav_menu(array(
-                                'theme_location' => 'primary_menu',
-                                'menu'            => 'Header Menu',
-                                'container'       => 'nav',
-                                'container_class' => 'nav-wrap',
-                                 'menu_class'     => 'header-menu d-flex justify-content-between align-items-center',
-                            ));
-                        }
-                        ?>
+                        <div class="navigation-block">
+                            <div class="close-button-wrapper">
+                                <button class="close-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="close-icon" aria-hidden="true"
+                                        focusable="false">
+                                        <line x1="4.5" y1="4.5" x2="19.5" y2="19.5" stroke="#FF4A39" stroke-width="2"
+                                            stroke-linecap="round" />
+                                        <line x1="19.5" y1="4.5" x2="4.5" y2="19.5" stroke="#FF4A39" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
 
-                    </div>
-                    <?php if ($login_button || $sign_up_button): ?>
-                    <div class="header-btn-groups-wrap">
-                        <ul class="header-btn-groups d-flex justify-content-between align-items-center">
-                            <?php if ($login_button): ?>
-                            <li>
-                                <a class="common-btn" href="<?php echo esc_url($login_button['url']); ?>"
-                                    target="<?php echo esc_attr($login_button['target']); ?>">
-                                    <?php echo esc_html($login_button['title']); ?>
-                                </a>
-                            </li>
-                            <?php endif; ?>
-                            <?php if ($sign_up_button): ?>
-                            <li>
-                                <a class="transparent-btn" href="<?php echo esc_url($sign_up_button['url']); ?>"
-                                    target="<?php echo esc_attr($sign_up_button['target']); ?>">
-                                    <?php echo esc_html($sign_up_button['title']); ?>
-                                </a>
-                            </li>
-                            <?php endif; ?>
-                        </ul>
-                    </div>
-                    <?php endif; ?>
+                            <div class="navigation-wrap" role="navigation" aria-label="Main Menu">
+                                <?php
+                                    if (has_nav_menu('primary_menu')) {
+                                        wp_nav_menu(array(
+                                            'theme_location' => 'primary_menu',
+                                            'menu'            => 'Header Menu',
+                                            'container'       => 'nav',
+                                            'container_class' => 'nav-wrap',
+                                            'menu_class'     => 'header-menu d-flex justify-content-between align-items-center',
+                                        ));
+                                    }
+                                ?>
+
+                            </div>
+                        </div>
+
+                        <?php if ($login_button || $sign_up_button): ?>
+                        <div class="header-btn-groups-wrap">
+                            <ul class="header-btn-groups d-flex justify-content-between align-items-center">
+                                <?php if ($login_button): ?>
+                                <li>
+                                    <a class="common-btn" href="<?php echo esc_url($login_button['url']); ?>"
+                                        target="<?php echo esc_attr($login_button['target']); ?>">
+                                        <?php echo esc_html($login_button['title']); ?>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                                <?php if ($sign_up_button): ?>
+                                <li>
+                                    <a class="transparent-btn" href="<?php echo esc_url($sign_up_button['url']); ?>"
+                                        target="<?php echo esc_attr($sign_up_button['target']); ?>">
+                                        <?php echo esc_html($sign_up_button['title']); ?>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+
+                        <div class="navbar-toggler-wrapper">
+                            <button class="navbar-toggler">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                                    <rect y="4" width="24" height="2" fill="#FF4A39" />
+                                    <rect y="11" width="24" height="2" fill="#FF4A39" />
+                                    <rect y="18" width="24" height="2" fill="#FF4A39" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

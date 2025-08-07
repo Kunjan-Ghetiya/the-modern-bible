@@ -30,4 +30,20 @@ jQuery(document).ready(function ($) {
         $iframe.attr('src', '');
         $('body').removeClass('popup-open');
     });
+
+    // header js
+
+    if (jQuery(window).width() <= 1199) {
+
+        $('.close-button').click(function () {
+            $('.navigation-block').removeClass("show");
+            $('body').removeClass("overflow-hidden overlay-show");
+        });
+
+        $('.navbar-toggler').click(function () {
+            $('.navigation-block').addClass("show");
+            $('body').addClass("overflow-hidden overlay-show");
+        });
+
+    }
 }); 
