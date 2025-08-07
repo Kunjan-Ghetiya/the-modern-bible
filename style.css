@@ -226,7 +226,9 @@ h6 {
 }
 
 .highlighted-text {
-    background: linear-gradient(98.68deg, #FF512F 0.64%, #DD2476 152.93%);
+    background: linear-gradient(98.68deg,
+            var(--color-gradient-start) 0.64%,
+            var(--color-gradient-end) 152.93%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -260,7 +262,10 @@ h6 {
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
-    background: linear-gradient(98.68deg, #FF512F 0%, #DD2476 50%, #FF512F 100%);
+    background: linear-gradient(98.68deg,
+            var(--color-gradient-start) 0%,
+            var(--color-gradient-end) 50%,
+            var(--color-gradient-start) 100%);
     background-size: 200% 100%;
     color: var(--color-white);
     font-size: 18px;
@@ -271,7 +276,9 @@ h6 {
     position: relative;
     background: transparent;
     color: transparent;
-    background: linear-gradient(98.68deg, #FF512F 0.64%, #DD2476 152.93%);
+    background: linear-gradient(98.68deg,
+            var(--color-gradient-start) 0.64%,
+            var(--color-gradient-end) 152.93%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -287,7 +294,9 @@ h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(98.68deg, #FF512F 0.64%, #DD2476 152.93%);
+    background: linear-gradient(98.68deg,
+            var(--color-gradient-start) 0.64%,
+            var(--color-gradient-end) 152.93%);
     border-radius: 10px;
     padding: 1px;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -300,7 +309,10 @@ h6 {
 .common-btn:hover,
 .wp-block-button:not(.watch-video-button) .wp-element-button:hover,
 .transparent-btn:hover {
-    background: linear-gradient(98.68deg, #FF512F 0%, #DD2476 50%, #FF512F 100%) !important;
+    background: linear-gradient(98.68deg,
+            var(--color-gradient-start) 0%,
+            var(--color-gradient-end) 50%,
+            var(--color-gradient-start) 100%) !important;
     background-size: 200% 100% !important;
     background-position: 100% 0 !important;
     -webkit-background-clip: border-box !important;
@@ -377,7 +389,9 @@ h6 {
 }
 
 .current-menu-item a {
-    background: linear-gradient(90deg, #FF512F 0%, #DD2476 100%);
+    background: linear-gradient(90deg,
+            var(--color-gradient-start) 0%,
+            var(--color-gradient-end) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -392,7 +406,9 @@ h6 {
     transition: 0.5s transform ease;
     transform: scale3d(0, 1, 1);
     transform-origin: 50% 50%;
-    background: linear-gradient(90deg, #FF512F 0%, #DD2476 100%);
+    background: linear-gradient(90deg,
+            var(--color-gradient-start) 0%,
+            var(--color-gradient-end) 100%);
 }
 
 .nav-wrap a:hover::before {
@@ -409,7 +425,9 @@ h6 {
     padding: 24px 0 25px;
     margin-top: 30px;
     border-top: 2px solid transparent;
-    border-image-source: radial-gradient(50% 64979997.6% at 50% 50.7%, #FC4D34 0%, rgba(237, 57, 84, 0.05) 100%);
+    border-image-source: radial-gradient(50% 64979997.6% at 50% 50.7%,
+            var(--color-gradient-start) 0%,
+            rgba(237, 57, 84, 0.05) 100%);
     border-image-slice: 1;
 }
 
@@ -454,7 +472,9 @@ h6 {
     content: "";
     width: 80.6%;
     height: 78%;
-    background: linear-gradient(98.68deg, #FF512F 0.64%, #DD2476 152.93%);
+    background: linear-gradient(98.68deg,
+            var(--color-gradient-start) 0.64%,
+            var(--color-gradient-end) 152.93%);
     position: absolute;
     z-index: 0;
     bottom: 0;
@@ -544,7 +564,7 @@ body .icon-box .wp-block-media-text__content p {
 /* image with content section css start */
 
 .feature-highlights-section {
-    padding: 113px 0 100px;
+    padding: 121px 0 60px;
 }
 
 .image-wrap {
@@ -586,7 +606,7 @@ body .icon-box .wp-block-media-text__content p {
 
 .feature-highlights-image-overlay img {
     border-radius: 16px;
-    border: 10px solid #fff;
+    border: 10px solid var(--color-white);
 }
 
 .feature-highlights-content {
@@ -604,7 +624,7 @@ body .icon-box .wp-block-media-text__content p {
 }
 
 .cards-listing-section {
-    padding: 160px 0 115px 0;
+    padding: 120px 0 115px 0;
 }
 
 .cards-section-text-wrapper {
@@ -635,7 +655,15 @@ body .icon-box .wp-block-media-text__content p {
 }
 
 .cards-listing-section p {
-    color: rgba(29, 29, 29, 0.6);
+    color: var(--color-gray-60);
+}
+
+.card-column p {
+    margin-bottom: 0;
+}
+
+.card-column .wp-block-buttons .wp-block-button.card-btn-wrap>a.wp-element-button {
+    min-width: 166px;
 }
 
 .cards-listing-section .card-column p:last-child {
@@ -712,7 +740,9 @@ body .card-btn-wrap {
     content: "";
     width: 10px;
     height: 100%;
-    background: linear-gradient(98.68deg, #FF512F 0.64%, #DD2476 152.93%);
+    background: linear-gradient(98.68deg,
+            var(--color-gradient-start) 0.64%,
+            var(--color-gradient-end) 152.93%);
     position: absolute;
     left: 0;
     border-radius: 10px 0 0 10px;
@@ -773,7 +803,9 @@ body .card-btn-wrap {
 }
 
 .custom-arrow:hover {
-    background: linear-gradient(98.68deg, #FF512F 0.64%, #DD2476 152.93%);
+    background: linear-gradient(98.68deg,
+            var(--color-gradient-start) 0.64%,
+            var(--color-gradient-end) 152.93%);
 }
 
 .custom-arrow::before {
@@ -801,7 +833,9 @@ body .card-btn-wrap {
 
 .qutes-icon {
     position: absolute;
-    background: linear-gradient(98.68deg, #FF512F 0.64%, #DD2476 152.93%);
+    background: linear-gradient(98.68deg,
+            var(--color-gradient-start) 0.64%,
+            var(--color-gradient-end) 152.93%);
     border-radius: 20px;
     padding: 36px 32px;
     top: 1px;
@@ -899,19 +933,23 @@ body .testimonial-sec-title {
     padding: 0;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
-    overflow: hidden;
 }
 
 .popup-close {
     position: absolute;
-    top: 6px;
-    right: 14px;
+    top: -50px;
+    right: 0;
     background: none;
     border: none;
     color: #fff;
     font-size: 28px;
     cursor: pointer;
     z-index: 10;
+}
+
+.popup-close:hover {
+    color: var(--color-gradient-start);
+    transform: scale(1.2);
 }
 
 .popup-video-wrapper {
