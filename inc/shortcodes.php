@@ -19,7 +19,8 @@ function custom_testimonials_shortcode() {
 
     if ($testimonials->have_posts()) :
         ?>
-    <div class="testimonial-slider-wrap">
+    <div class="testimonial-slider-wrapper">
+        <div class="testimonial-slider-wrap">
         <div class="testimonial-slider">
             <?php while ($testimonials->have_posts()) : $testimonials->the_post(); ?>
             <div class="testimonial-card">
@@ -48,6 +49,7 @@ function custom_testimonials_shortcode() {
             <?php endwhile; wp_reset_postdata(); ?>
         </div>
     </div>
+    </div>
 <?php
     else :
         echo '<p>No testimonials found.</p>';
@@ -56,5 +58,32 @@ function custom_testimonials_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('testimonials_slider', 'custom_testimonials_shortcode');
+
+function fancybox_video_button_shortcode($atts) {
+
+    $atts = shortcode_atts(array(
+        'url' => '',
+        'label' => 'Watch Video'
+    ), $atts, 'fancybox_video_button');
+
+    if (empty($atts['url'])) {
+        return '';
+    }
+
+    ob_start();
+    ?>
+    <div class="wp-block-button watch-video-button open-video-popup">
+        <a 
+            class="wp-block-button__link wp-element-button" 
+            href="<?php echo esc_url($atts['url']); ?>" 
+            data-fancybox
+        >
+            <?php echo esc_html($atts['label']); ?>
+        </a>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('fancybox_video_button', 'fancybox_video_button_shortcode');
 
 ?>

@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
         dots: false,
     });
 
-    $('.remove-flex').css('display', 'block');
+    // $('.remove-flex').css('display', 'block');
 
     // Custom Video Popup
     const $popup = $('.custom-video-popup');
