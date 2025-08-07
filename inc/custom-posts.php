@@ -35,4 +35,38 @@ function register_social_links_cpt() {
     register_post_type('social_link', $args);
 }
 add_action('init', 'register_social_links_cpt');
+
+// Register Custom Post Type: Testimonials
+function register_testimonials_cpt() {
+
+    $labels = array(
+        'name'               => 'Testimonials',
+        'singular_name'      => 'Testimonial',
+        'menu_name'          => 'Testimonials',
+        'name_admin_bar'     => 'Testimonial',
+        'add_new'            => 'Add New',
+        'add_new_item'       => 'Add New Testimonial',
+        'new_item'           => 'New Testimonial',
+        'edit_item'          => 'Edit Testimonial',
+        'view_item'          => 'View Testimonial',
+        'all_items'          => 'All Testimonials',
+        'search_items'       => 'Search Testimonials',
+        'not_found'          => 'No testimonials found',
+        'not_found_in_trash' => 'No testimonials found in Trash',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'menu_icon'          => 'dashicons-format-quote',
+        'has_archive'        => false,
+        'rewrite'            => array('slug' => 'testimonials'),
+        'show_in_rest'       => true,
+        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt'),
+    );
+
+    register_post_type('testimonial', $args);
+}
+add_action('init', 'register_testimonials_cpt');
+
 ?>

@@ -1,4 +1,33 @@
-jQuery(document).ready(function($){
+jQuery(document).ready(function ($) {
 
+    // Testimonial Slider
+    $('.testimonial-slider').slick({
+        slidesToShow: 1,
+        arrows: true,
+        prevArrow: $('.prev-arrow'),
+        nextArrow: $('.next-arrow'),
+        dots: false,
+    });
 
+    $('.remove-flex').css('display', 'block');
+
+    // Custom Video Popup
+    const $popup = $('.custom-video-popup');
+    const $iframe = $('#popup-youtube-video');
+
+    $('.open-video-popup').on('click', function (e) {
+        e.preventDefault();
+        const videoId = $(this).data('video-id');
+        const videoURL = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+
+        $iframe.attr('src', videoURL);
+        $popup.fadeIn().attr('aria-hidden', 'false');
+        $('body').addClass('popup-open');
+    });
+
+    $('.popup-close, .popup-overlay').on('click', function () {
+        $popup.fadeOut().attr('aria-hidden', 'true');
+        $iframe.attr('src', '');
+        $('body').removeClass('popup-open');
+    });
 }); 
