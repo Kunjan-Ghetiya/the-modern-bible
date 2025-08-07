@@ -372,6 +372,7 @@ h6 {
 .site-logo {
     max-width: 177px;
     width: 100%;
+    line-height: 0;
 }
 
 .header-right-wrap {
@@ -465,6 +466,11 @@ h6 {
 
 .quick-links-wrap a:hover {
     color: var(--color-gradient-start);
+}
+
+.footer-logo-wrap,
+.social-links-wrap {
+    line-height: 0;
 }
 
 /* banner section css start */
@@ -697,6 +703,15 @@ body .card-btn-wrap {
 
 .wp-block-group.d-block.is-vertical {
     display: initial !important;
+}
+
+.card-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-column .wp-block-buttons {
+    margin-top: auto;
 }
 
 /* Testimonial Section */
@@ -1025,6 +1040,8 @@ body.popup-open {
         max-width: 960px;
     }
 
+    /* header css start */
+
     .navbar-toggler,
     .close-button {
         cursor: pointer;
@@ -1154,4 +1171,99 @@ body.popup-open {
     .header-right-wrap {
         gap: 0 30px;
     }
+
+    /* header css end */
+
+    .heading-1 {
+        font-size: 50px;
+    }
+
+    .wp-block-column.banner-right-wrap .hero-image img {
+        height: auto !important;
+        max-width: 350px;
+    }
+
+    .icon-box-thired {
+        right: 0;
+    }
+
+    .feature-highlights-wrapper {
+        flex-direction: column;
+    }
+
+    .feature-highlights-image-primary {
+        padding-top: 45.35%;
+    }
+
+    .feature-highlights-image-overlay {
+        padding-top: 32.7%;
+        max-width: 383px;
+        bottom: -90px;
+    }
+
+    .feature-highlights-content h2 br {
+        display: none;
+    }
+
+    .feature-highlights-content {
+        padding-top: 79px;
+    }
+
+    .feature-highlights-section {
+        padding: 50px 0 25px;
+    }
+
+    .cards-listing-section {
+        padding: 25px 0 50px 0;
+    }
+
+    .wp-block-group.cards-section-heading-wrapper {
+        margin-bottom: 30px;
+    }
+
+    .feature-highlights-content>p {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .feature-highlights-content .wp-block-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-highlights-content>p,
+    .feature-highlights-content>h2 {
+        text-align: center;
+    }
+
+    .feature-highlights-content>h2 {
+        margin-bottom: 15px;
+    }
+
+    .wp-block-columns.cards-listing-row {
+        gap: 20px;
+    }
+
+    .card-column {
+        padding: 25px;
+    }
+
+    .cta-section {
+        padding: 50px 0 50px;
+    }
+
+    .cta-section .cta-content-block h2 {
+        font-size: 22px;
+    }
+
+    .social-links-wrap {
+        line-height: 0;
+    }
+
+    .footer-wrap {
+        flex-direction: column;
+        gap: 20px;
+    }
+
 }
