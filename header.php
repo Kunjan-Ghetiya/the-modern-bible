@@ -73,10 +73,8 @@ $sign_up_button  = get_field('sign_up_button', $theme_settings_id);
                                 ?>
 
                             </div>
-                        </div>
-
-                        <?php if ($login_button || $sign_up_button): ?>
-                        <div class="header-btn-groups-wrap">
+                          <?php if ($login_button || $sign_up_button): ?>
+                        <div class="header-btn-groups-wrap mobile-block">
                             <ul class="header-btn-groups d-flex justify-content-between align-items-center">
                                 <?php if ($login_button): ?>
                                 <li>
@@ -96,7 +94,31 @@ $sign_up_button  = get_field('sign_up_button', $theme_settings_id);
                                 <?php endif; ?>
                             </ul>
                         </div>
+                        <?php endif; ?>  
+                        </div>
 
+                        <?php if ($login_button || $sign_up_button): ?>
+                        <div class="header-btn-groups-wrap desktop-block">
+                            <ul class="header-btn-groups d-flex justify-content-between align-items-center">
+                                <?php if ($login_button): ?>
+                                <li>
+                                    <a class="common-btn" href="<?php echo esc_url($login_button['url']); ?>"
+                                        target="<?php echo esc_attr($login_button['target']); ?>">
+                                        <?php echo esc_html($login_button['title']); ?>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                                <?php if ($sign_up_button): ?>
+                                <li>
+                                    <a class="transparent-btn" href="<?php echo esc_url($sign_up_button['url']); ?>"
+                                        target="<?php echo esc_attr($sign_up_button['target']); ?>">
+                                        <?php echo esc_html($sign_up_button['title']); ?>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+                        <?php endif; ?>
                         <div class="navbar-toggler-wrapper">
                             <button class="navbar-toggler">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -107,8 +129,6 @@ $sign_up_button  = get_field('sign_up_button', $theme_settings_id);
                                 </svg>
                             </button>
                         </div>
-
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>
