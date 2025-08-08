@@ -101,16 +101,27 @@ $quick_links = get_field('quick_links',$theme_settings_id);
     </div>
 </footer>
 
-<div class="custom-video-popup" aria-hidden="true">
-    <div class="popup-overlay"></div>
-    <div class="popup-content" role="dialog" aria-modal="true" aria-label="YouTube Video">
-        <button class="popup-close" aria-label="Close popup">×</button>
-        <div class="popup-video-wrapper">
-            <iframe id="popup-youtube-video" src="" frameborder="0" allowfullscreen loading="lazy"
-                allow="autoplay"></iframe>
-        </div>
-    </div>
-</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('a[href*="youtu.be"], a[href*="youtube.com/embed"]').forEach(link => {
+    let href = link.href;
+
+    if (href.includes("youtu.be")) {
+      const id = href.split("/").pop().split("?")[0];
+      href = `https://www.youtube.com/embed/${id}`;
+      link.href = href;
+    }
+
+    link.dataset.fancybox = "video";
+    link.dataset.type = "iframe";
+    link.dataset.options = JSON.stringify({
+      iframe: { preload: false, css: { width: '100%', height: '100%' } }
+    });
+  });
+});
+</script>
+
+</script>
 
 <?php wp_footer(); ?>
 </body>

@@ -14,20 +14,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="<?php bloginfo('description'); ?>">
+    <title><?php echo wp_get_document_title(); ?></title>
 
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-
+    <div class="backdrop"></div>
     <?php
-$theme_settings_id = get_page_by_title('Theme Settings')->ID;
+        $theme_settings_id = get_page_by_title('Theme Settings')->ID;
 
-$header_logo     = get_field('header_logo', $theme_settings_id);
-$login_button    = get_field('login_button', $theme_settings_id);
-$sign_up_button  = get_field('sign_up_button', $theme_settings_id);
+        $header_logo     = get_field('header_logo', $theme_settings_id);
+        $login_button    = get_field('login_button', $theme_settings_id);
+        $sign_up_button  = get_field('sign_up_button', $theme_settings_id);
 
-?>
+    ?>
 
     <header class="header">
         <div class="container">
@@ -73,28 +74,28 @@ $sign_up_button  = get_field('sign_up_button', $theme_settings_id);
                                 ?>
 
                             </div>
-                          <?php if ($login_button || $sign_up_button): ?>
-                        <div class="header-btn-groups-wrap mobile-block">
-                            <ul class="header-btn-groups d-flex justify-content-between align-items-center">
-                                <?php if ($login_button): ?>
-                                <li>
-                                    <a class="common-btn" href="<?php echo esc_url($login_button['url']); ?>"
-                                        target="<?php echo esc_attr($login_button['target']); ?>">
-                                        <?php echo esc_html($login_button['title']); ?>
-                                    </a>
-                                </li>
-                                <?php endif; ?>
-                                <?php if ($sign_up_button): ?>
-                                <li>
-                                    <a class="transparent-btn" href="<?php echo esc_url($sign_up_button['url']); ?>"
-                                        target="<?php echo esc_attr($sign_up_button['target']); ?>">
-                                        <?php echo esc_html($sign_up_button['title']); ?>
-                                    </a>
-                                </li>
-                                <?php endif; ?>
-                            </ul>
-                        </div>
-                        <?php endif; ?>  
+                            <?php if ($login_button || $sign_up_button): ?>
+                            <div class="header-btn-groups-wrap mobile-block">
+                                <ul class="header-btn-groups d-flex justify-content-between align-items-center">
+                                    <?php if ($login_button): ?>
+                                    <li>
+                                        <a class="common-btn" href="<?php echo esc_url($login_button['url']); ?>"
+                                            target="<?php echo esc_attr($login_button['target']); ?>">
+                                            <?php echo esc_html($login_button['title']); ?>
+                                        </a>
+                                    </li>
+                                    <?php endif; ?>
+                                    <?php if ($sign_up_button): ?>
+                                    <li>
+                                        <a class="transparent-btn" href="<?php echo esc_url($sign_up_button['url']); ?>"
+                                            target="<?php echo esc_attr($sign_up_button['target']); ?>">
+                                            <?php echo esc_html($sign_up_button['title']); ?>
+                                        </a>
+                                    </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                            <?php endif; ?>
                         </div>
 
                         <?php if ($login_button || $sign_up_button): ?>
